@@ -1,43 +1,32 @@
-// Wait for DOM to load
-document.addEventListener('DOMContentLoaded', () => {
-    
-    // --- Mobile Navigation Toggle ---
-    const menuToggle = document.getElementById('mobile-menu');
-    const navLinks = document.querySelector('.nav-links');
-    const links = document.querySelectorAll('.nav-link');
+document.addEventListener("DOMContentLoaded", () => {
 
-    // Toggle menu on click
-    menuToggle.addEventListener('click', () => {
-        menuToggle.classList.toggle('is-active');
-        navLinks.classList.toggle('active');
-    });
+    // Mobile Menu
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    const links = document.querySelectorAll('.nav-links a');
 
-    // Close menu when a link is clicked
+    if (hamburger) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    }
+
+    // Close menu when clicking link
     links.forEach(link => {
         link.addEventListener('click', () => {
-            menuToggle.classList.remove('is-active');
             navLinks.classList.remove('active');
         });
     });
 
-    // --- Scroll Reveal Animation ---
-    const revealElements = document.querySelectorAll('.scroll-reveal');
-
-    const revealOnScroll = () => {
-        const windowHeight = window.innerHeight;
-        const elementVisible = 100; // Trigger distance from bottom
-
-        revealElements.forEach((element) => {
-            const elementTop = element.getBoundingClientRect().top;
-            if (elementTop < windowHeight - elementVisible) {
-                element.classList.add('active');
+    // Scroll Reveal
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
             }
         });
-    };
+    }, { threshold: 0.1 });
 
-    // Trigger once on load to show elements already in view
-    revealOnScroll();
-
-    // Listen to scroll event
-    window.addEventListener('scroll', revealOnScroll);
+    const hiddenElements = document.querySelectorAll('.hidden');
+    hiddenElements.forEach((el) => observer.observe(el));
 });

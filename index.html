@@ -1,86 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anjul Sati | Java Full Stack Developer</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="frontend/css/style.css">
 </head>
+
 <body>
 
     <nav class="navbar">
         <div class="container nav-flex">
-            <a href="#" class="logo">Anjul<span class="dot">.</span>Dev</a>
-            
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <a href="#" class="logo">&lt;Anjul<span class="accent">/</span>&gt;</a>
+
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
             </div>
 
-            <ul class="nav-links">
-                <li><a href="#hero" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact" class="btn-cta">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <section id="hero" class="hero">
-        <div class="container hero-container">
-            <div class="hero-content fade-in-up">
-                <span class="greeting">Hi there, I'm</span>
-                <h1 class="hero-name">Anjul Sati</h1>
-                <h2 class="hero-role">Java Full Stack Developer</h2>
-                <p class="hero-description">
-                    Engineering scalable backend systems and crafting modern, responsive web applications. 
-                    Specializing in Spring Boot and Microservices.
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="badge-pill">🚀 2nd Year Student & Developer</div>
+                <h1>Engineering <span class="gradient-text">Scalable</span> <br>Java Solutions.</h1>
+                <p class="description">
+                    Hi, I'm <strong>Anjul Sati</strong>. A passionate 2nd Year Computer Science student and
+                    Full Stack Developer specializing in <strong>Spring Boot</strong> Microservices and
+                    <strong>React</strong> interfaces.
                 </p>
-                <div class="hero-buttons">
+                <div class="hero-btns">
                     <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-outline">Let's Talk</a>
+                    <a href="#contact" class="btn btn-secondary">Hire Me</a>
+                </div>
+            </div>
+        </div>
+        <div class="glow-bg"></div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-heading">About <span class="accent">Me</span></h2>
+            <div class="bento-grid">
+                <div class="bento-item bio-box hidden">
+                    <i class="fas fa-code icon-bg"></i>
+                    <h3>The Developer</h3>
+                    <p>
+                        I am currently pursuing my <strong>B.Tech in CSE</strong> (2nd Year).
+                        My focus is on backend architecture, database optimization, and building secure RESTful APIs.
+                    </p>
+                </div>
+                <div class="bento-item skills-box hidden delay-1">
+                    <h3>Tech Stack</h3>
+                    <div class="tags">
+                        <span>Java 17</span>
+                        <span>Spring Boot</span>
+                        <span>Microservices</span>
+                        <span>MySQL</span>
+                        <span>Hibernate</span>
+                        <span>React.js</span>
+                        <span>Docker</span>
+                        <span>AWS</span>
+                        <span>Git</span>
+                    </div>
+                </div>
+                <div class="bento-item edu-box hidden delay-2">
+                    <h3>Education</h3>
+                    <div class="edu-item">
+                        <strong>B.Tech Computer Science</strong>
+                        <span>2024 - 2028 (Present)</span>
+                    </div>
+                    <div class="edu-item" style="margin-top:10px;">
+                        <strong>Java Certification</strong>
+                        <span>Full Stack Development</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="section">
+    <section id="services" class="section">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-grid">
-                <div class="about-card scroll-reveal">
-                    <h3>Who I Am</h3>
-                    <p>
-                        I am a passionate engineering student and developer focused on high-impact software solutions. 
-                        My journey involves mastering <strong>Java Ecosystems</strong> and building robust <strong>RESTful APIs</strong>.
-                    </p>
-                    <p>
-                        I believe in clean code architecture, database optimization, and continuous learning to solve real-world technical challenges.
-                    </p>
+            <h2 class="section-heading">My <span class="accent">Expertise</span></h2>
+            <div class="services-grid">
+                <div class="service-card hidden">
+                    <i class="fas fa-server service-icon"></i>
+                    <h3>Backend Development</h3>
+                    <p>Building robust, scalable server-side applications using Java and Spring Boot. I ensure data
+                        security and flawless logic.</p>
                 </div>
-
-                <div class="skills-card scroll-reveal delay-100">
-                    <h3>Tech Stack</h3>
-                    <div class="skills-wrapper">
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">Spring Boot</span>
-                        <span class="skill-tag">Microservices</span>
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">Hibernate</span>
-                        <span class="skill-tag">React.js</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">Git/GitHub</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">AWS</span>
-                    </div>
+                <div class="service-card hidden delay-1">
+                    <i class="fas fa-database service-icon"></i>
+                    <h3>Database Design</h3>
+                    <p>Designing efficient schemas with MySQL & PostgreSQL. Expert in ORM mapping using Hibernate.</p>
+                </div>
+                <div class="service-card hidden delay-2">
+                    <i class="fas fa-laptop-code service-icon"></i>
+                    <h3>Full Stack Web</h3>
+                    <p>Creating seamless user experiences by connecting powerful Java backends with dynamic React.js
+                        frontends.</p>
                 </div>
             </div>
         </div>
@@ -88,62 +121,74 @@
 
     <section id="projects" class="section">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <h2 class="section-heading">Featured <span class="accent">Projects</span></h2>
             <div class="projects-grid">
 
-                <div class="project-card scroll-reveal">
-                    <div class="project-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Internship System">
-                    </div>
-                    <div class="project-content">
-                        <h3>Internship Management</h3>
-                        <p class="project-desc">A centralized platform connecting university students with corporate internship opportunities.</p>
-                        <div class="project-tech">
-                            <span>Java</span>
-                            <span>Spring Boot</span>
-                            <span>MySQL</span>
+                <div class="project-card hidden">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <i class="fas fa-folder-open folder-icon"></i>
+                            <div class="links">
+                                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
                         </div>
-                        <div class="project-links">
-                            <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
-                            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card scroll-reveal delay-100">
-                    <div class="project-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Exam Portal">
-                    </div>
-                    <div class="project-content">
-                        <h3>Online Exam Portal</h3>
-                        <p class="project-desc">Secure examination environment with real-time monitoring, auto-grading, and JWT authentication.</p>
-                        <div class="project-tech">
-                            <span>Spring Security</span>
-                            <span>React</span>
-                            <span>JWT</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
-                            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live</a>
+                        <h3>Internship Portal</h3>
+                        <p>A comprehensive platform connecting students with companies. Features include application
+                            tracking, HR dashboards, and email notifications.</p>
+                        <div class="tech-stack-mini">
+                            <span>Spring Boot</span><span>React</span><span>MySQL</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card scroll-reveal delay-200">
-                    <div class="project-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Expense Tracker">
+                <div class="project-card hidden delay-1">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <i class="fas fa-folder-open folder-icon"></i>
+                            <div class="links">
+                                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <h3>Secure Exam System</h3>
+                        <p>Online examination environment with real-time monitoring, auto-grading logic, and JWT-based
+                            secure authentication.</p>
+                        <div class="tech-stack-mini">
+                            <span>Spring Security</span><span>JWT</span><span>Java</span>
+                        </div>
                     </div>
-                    <div class="project-content">
+                </div>
+
+                <div class="project-card hidden delay-2">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <i class="fas fa-folder-open folder-icon"></i>
+                            <div class="links">
+                                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <h3>College ERP System</h3>
+                        <p>A Microservices-based ERP solution for academic management, student records, fee processing,
+                            and attendance.</p>
+                        <div class="tech-stack-mini">
+                            <span>Microservices</span><span>Docker</span><span>Kafka</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card hidden">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <i class="fas fa-folder-open folder-icon"></i>
+                            <div class="links">
+                                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
                         <h3>Expense Tracker API</h3>
-                        <p class="project-desc">A comprehensive backend service to track personal finances, visualize budgets, and generate reports.</p>
-                        <div class="project-tech">
-                            <span>Java</span>
-                            <span>REST API</span>
-                            <span>PostgreSQL</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
-                            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live</a>
+                        <p>Backend REST API to track personal finances, visualize daily budgets, and generate monthly
+                            PDF reports.</p>
+                        <div class="tech-stack-mini">
+                            <span>REST API</span><span>PostgreSQL</span><span>Swagger</span>
                         </div>
                     </div>
                 </div>
@@ -154,34 +199,30 @@
 
     <section id="contact" class="section">
         <div class="container">
-            <div class="contact-box scroll-reveal">
-                <h2 class="section-title">Let's Connect</h2>
-                <p class="contact-text">
-                    I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
-                </p>
-                <div class="contact-actions">
-                    <a href="mailto:anjulsati147@gmail.com" class="btn btn-primary big-btn">
-                        <i class="fas fa-paper-plane"></i> Say Hello
-                    </a>
-                    <a href="https://www.linkedin.com/in/anjulsati" target="_blank" class="btn btn-outline big-btn">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                    </a>
+            <div class="cta-banner hidden">
+                <h2>Ready to build something <span class="gradient-text">amazing?</span></h2>
+                <p>Whether you have a question or just want to say hi, my inbox is always open!</p>
+                <a href="mailto:anjulsati147@gmail.com" class="btn btn-primary big-btn">
+                    <i class="fas fa-envelope"></i> Let's Discuss
+                </a>
+            </div>
+
+            <div class="footer-socials">
+                <p>Connect with me:</p>
+                <div class="social-icons">
+                    <a href="https://linkedin.com/in/anjulsati" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/anjulsati" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="mailto:anjulsati147@gmail.com"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="container footer-content">
-            <p>© 2026 Anjul Sati. Built with <span class="heart">❤</span> & Java.</p>
-            <div class="socials">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-            </div>
-        </div>
+        <p>© 2026 Anjul Sati. Built with <span class="accent">Java</span> & Coffee ☕</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="frontend/js/script.js"></script>
 </body>
+
 </html>

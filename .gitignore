@@ -1,0 +1,17 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.idea/
+.vscode/
+
+# Java / Maven
+target/
+*.log
+
+# Node (future)
+node_modules/
+
+# Environment files
+.env

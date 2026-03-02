@@ -1,23 +1,39 @@
-# Portfolio Management Project
+# 🌐 Developer Portfolio – MERN & Java
 
-Personal portfolio website of **Anjul Sati** – Java Full Stack Developer.
+This is my personal developer portfolio website.  
+It showcases my projects, skills, and experience as a **Full Stack Developer**.
 
-## Tech Stack
+---
+
+## 🚀 Tech Stack
+
 ### Frontend
 - HTML5
 - CSS3
-- JavaScript
+- JavaScript (ES6+)
 
-### Backend (Planned)
-- Java
-- Spring Boot
+### Full Stack & Backend
+- **MERN Stack** (MongoDB, Express.js, React.js, Node.js)
+- **Java & Spring Boot**
 - REST APIs
-- MySQL
+- JWT Authentication
+- Microservices Architecture
+- Docker & AWS (Basics)
 
-## Project Structure
-- frontend → UI layer
-- backend → API layer (to be implemented)
+---
 
-## Status
-Frontend completed  
-Backend starting soon
+## 📁 Project Structure
+
+```text
+portfolio-management/
+├── index.html
+├── frontend/
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   └── script.js
+│   └── assets/
+│       └── images/
+├── backend/
+│   └── portfolio-api/
+└── README.md

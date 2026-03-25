@@ -39,6 +39,10 @@ body {
     scroll-behavior: smooth;
 }
 
+body {
+  padding-top: 80px;
+}
+
 :focus-visible {
     outline: 2px solid var(--primary);
     outline-offset: 4px;
@@ -419,30 +423,12 @@ body {
     flex-grow: 1;
 }
 
-/* Styling for the dynamic project tech stack tags */
-.tech-stack-mini.tags {
+.tech-stack-mini {
     display: flex;
-    flex-wrap: wrap;
     gap: 10px;
-    margin-top: 15px;
-}
-
-/* Base style for individual tech stack pills */
-.tech-stack-mini.tags span {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 5px 12px;
-    border-radius: 4px;
     font-family: var(--font-mono);
-    font-size: 0.8rem;
-    color: var(--primary); /* Keep it solid green */
-    transition: var(--transition);
-    display: inline-block; /* Keeps the boxes perfectly rectangular */
-}
-
-/* Hover effect on tags */
-.tech-stack-mini.tags span:hover {
-    background: rgba(100, 255, 218, 0.12);
-    transform: translateY(-2px);
+    font-size: 0.75rem;
+    color: var(--text-muted);
 }
 
 /* --- Contact Banner & Footer --- */

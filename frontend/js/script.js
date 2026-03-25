@@ -114,7 +114,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         hiddenElements.forEach(el => observer.observe(el));
     } else {
-        // Fallback for very old browsers
         hiddenElements.forEach(el => el.classList.add("show"));
     }
 
@@ -127,4 +126,55 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 100);
 
     window.addEventListener("scroll", onScroll, { passive: true });
+
+    /* =====================================================
+       FETCH DYNAMIC PROJECTS FROM CMS (UPDATED STYLE)
+    ====================================================== */
+    const fetchProjects = async () => {
+        const projectsContainer = document.getElementById("dynamic-projects");
+        if (!projectsContainer) return;
+
+        try {
+            const response = await fetch("http://localhost:5000/api/projects");
+            const projects = await response.json();
+
+            projectsContainer.innerHTML = ""; // Clear loading state
+
+            if (projects.length === 0) {
+                projectsContainer.innerHTML = "<p style='color: var(--text-muted);'>No projects found. Add some from the Admin panel.</p>";
+                return;
+            }
+
+            projects.forEach((proj, index) => {
+                // UPDATE: The tech stack items now have 'span' tags applied for pill boxes
+                const techSpans = proj.techStack.map(tech => `<span>${tech.trim()}</span>`).join('');
+                
+                // Add staggered animation delay
+                const delayClass = index % 3 === 1 ? 'delay-1' : index % 3 === 2 ? 'delay-2' : '';
+
+                const projectHTML = `
+                    <div class="project-card hidden show ${delayClass}">
+                        <div class="card-content">
+                            <div class="card-header">
+                                <i class="fas fa-folder-open folder-icon"></i>
+                                <span style="font-size: 0.8rem; color: var(--text-muted);">${proj.category}</span>
+                            </div>
+                            <h3>${proj.title}</h3>
+                            <p>${proj.description}</p>
+                            <div class="tech-stack-mini tags">
+                                ${techSpans}
+                            </div>
+                        </div>
+                    </div>
+                `;
+                projectsContainer.innerHTML += projectHTML;
+            });
+        } catch (error) {
+            console.error("Error fetching projects:", error);
+            projectsContainer.innerHTML = "<p style='color: #ff4d4d;'>Failed to load projects. Is the backend server running?</p>";
+        }
+    };
+
+    // Call the function to load projects
+    fetchProjects();
 });

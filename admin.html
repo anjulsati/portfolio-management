@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio CMS | Admin Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="frontend/css/admin.css"> </head>
+<body>
+
+    <div class="admin-header">
+        <h1>Admin CMS Dashboard</h1>
+    </div>
+
+    <div class="dashboard">
+        <div class="panel">
+            <h2>➕ Add New Project</h2>
+            <form id="addProjectForm">
+                <label>Project Title</label>
+                <input type="text" id="title" required>
+
+                <label>Project Description</label>
+                <textarea id="description" rows="4" required></textarea>
+                
+                <label>Category</label>
+                <select id="category">
+                    <option value="MERN Stack">MERN Stack</option>
+                    <option value="Java Spring Boot">Java Spring Boot</option>
+                </select>
+
+                <label>Tech Stack (Comma separated)</label>
+                <input type="text" id="techStack" required>
+                
+                <button type="submit">Publish Project</button>
+            </form>
+        </div>
+
+        <div class="panel">
+            <h2>📁 Manage Existing Projects</h2>
+            <div id="project-list"></div>
+        </div>
+    </div>
+
+    <script src="frontend/js/admin.js"></script> </body>
+</html>

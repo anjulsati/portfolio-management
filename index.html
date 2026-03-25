@@ -17,7 +17,6 @@
 
 <body>
 
-    <!-- NAVBAR -->
     <nav class="navbar" role="navigation">
         <div class="container nav-flex">
             <a href="#home" class="logo">&lt;Anjul<span class="accent">/</span>&gt;</a>
@@ -36,7 +35,6 @@
     </nav>
 
     <main>
-        <!-- HERO -->
         <section id="home" class="hero">
             <div class="container">
                 <div class="hero-content">
@@ -56,7 +54,6 @@
             <div class="glow-bg"></div>
         </section>
 
-        <!-- ABOUT -->
         <section id="about" class="section">
             <div class="container">
                 <h2 class="section-heading">About <span class="accent">Me</span></h2>
@@ -111,7 +108,6 @@
             </div>
         </section>
 
-        <!-- SERVICES -->
         <section id="services" class="section">
             <div class="container">
                 <h2 class="section-heading">My <span class="accent">Expertise</span></h2>
@@ -149,107 +145,28 @@
             </div>
         </section>
 
-        <!-- PROJECTS -->
         <section id="projects" class="section">
             <div class="container">
                 <h2 class="section-heading">Featured <span class="accent">Projects</span></h2>
-                <div class="projects-grid">
 
-                    <!-- MERN PROJECTS -->
-                    <div class="project-card hidden">
-                        <div class="card-content">
-                            <div class="card-header">
-                                <i class="fas fa-folder-open folder-icon"></i>
-                            </div>
-                            <h3>MERN Job Portal</h3>
-                            <p>
-                                Full-stack job portal with role-based authentication, job posting,
-                                application tracking, and admin dashboards.
-                            </p>
-                            <div class="tech-stack-mini">
-                                <span>MongoDB</span><span>Express</span><span>React</span><span>Node</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card hidden delay-1">
-                        <div class="card-content">
-                            <div class="card-header">
-                                <i class="fas fa-folder-open folder-icon"></i>
-                            </div>
-                            <h3>E-Commerce Platform (MERN)</h3>
-                            <p>
-                                Complete e-commerce solution with cart, checkout,
-                                JWT authentication, and admin product management.
-                            </p>
-                            <div class="tech-stack-mini">
-                                <span>MERN</span><span>JWT</span><span>REST API</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card hidden delay-2">
-                        <div class="card-content">
-                            <div class="card-header">
-                                <i class="fas fa-folder-open folder-icon"></i>
-                            </div>
-                            <h3>Expense Tracker (MERN)</h3>
-                            <p>
-                                Personal finance tracker with charts, monthly reports,
-                                authentication, and cloud-ready backend.
-                            </p>
-                            <div class="tech-stack-mini">
-                                <span>React</span><span>Node</span><span>MongoDB</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- JAVA PROJECTS -->
-                    <div class="project-card hidden">
-                        <div class="card-content">
-                            <div class="card-header">
-                                <i class="fas fa-folder-open folder-icon"></i>
-                            </div>
-                            <h3>College ERP System</h3>
-                            <p>
-                                Microservices-based ERP system for academics,
-                                attendance, fees, and student records.
-                            </p>
-                            <div class="tech-stack-mini">
-                                <span>Spring Boot</span><span>Microservices</span><span>Docker</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card hidden delay-1">
-                        <div class="card-content">
-                            <div class="card-header">
-                                <i class="fas fa-folder-open folder-icon"></i>
-                            </div>
-                            <h3>Secure Exam System</h3>
-                            <p>
-                                Online exam platform with JWT authentication,
-                                auto-grading, and real-time monitoring.
-                            </p>
-                            <div class="tech-stack-mini">
-                                <span>Java</span><span>Spring Security</span><span>JWT</span>
-                            </div>
-                        </div>
-                    </div>
-
+                <div class="projects-grid" id="dynamic-projects">
+                    <p style="color: var(--text-muted);">Loading projects from database...</p>
                 </div>
+
             </div>
         </section>
 
-        <!-- CONTACT -->
         <section id="contact" class="section">
             <div class="container">
                 <div class="cta-banner hidden">
                     <h2>Let’s build something <span class="gradient-text">great</span></h2>
                     <p>Open to internships, freelance work, and collaborations.</p>
-                    <a href="mailto:anjulsati147@gmail.com" class="btn btn-primary big-btn">
+
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=anjulsati147@gmail.com" target="_blank"
+                        class="btn btn-primary big-btn">
                         <i class="fas fa-envelope"></i> Contact Me
                     </a>
+
                 </div>
             </div>
         </section>

@@ -1,39 +1,115 @@
-# 🌐 Developer Portfolio – MERN & Java
+# 🚀 Dynamic Portfolio Management System
 
-This is my personal developer portfolio website.  
-It showcases my projects, skills, and experience as a **Full Stack Developer**.
+A full-stack portfolio website with a built-in CMS (Admin Panel) to dynamically manage projects.
 
 ---
 
-## 🚀 Tech Stack
+## 📌 Features
+
+* 🌐 Modern Portfolio UI (Responsive & Animated)
+* 🛠️ Admin Dashboard (CMS)
+* ➕ Add Projects
+* ❌ Delete Projects
+* 🔄 Real-time updates from database
+* 📡 REST API integration
+* 🗄️ MongoDB database
+
+---
+
+## 🏗️ Tech Stack
 
 ### Frontend
-- HTML5
-- CSS3
-- JavaScript (ES6+)
 
-### Full Stack & Backend
-- **MERN Stack** (MongoDB, Express.js, React.js, Node.js)
-- **Java & Spring Boot**
-- REST APIs
-- JWT Authentication
-- Microservices Architecture
-- Docker & AWS (Basics)
+* HTML5, CSS3
+* JavaScript (Vanilla)
+* Responsive Design
+
+### Backend
+
+* Node.js
+* Express.js
+
+### Database
+
+* MongoDB
+* Mongoose
 
 ---
 
-## 📁 Project Structure
+## 📂 Project Structure
 
-```text
-portfolio-management/
-├── index.html
+```
+PORTFOLIO-MANAGEMENT/
+│
+├── backend/
+│   ├── models/
+│   │   └── Project.js
+│   ├── server.js
+│   └── package.json
+│
 ├── frontend/
 │   ├── css/
-│   │   └── style.css
 │   ├── js/
-│   │   └── script.js
 │   └── assets/
-│       └── images/
-├── backend/
-│   └── portfolio-api/
+│
+├── admin.html
+├── index.html
 └── README.md
+```
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the Repository
+
+```
+git clone https://github.com/anjulsati/portfolio-management.git
+cd portfolio-management
+```
+
+### 2️⃣ Backend Setup
+
+```
+cd backend
+npm install
+node server.js
+```
+
+### 3️⃣ Start Frontend
+
+* Open `index.html` in browser
+* Open `admin.html` for CMS
+
+---
+
+## 🔗 API Endpoints
+
+| Method | Endpoint          | Description      |
+| ------ | ----------------- | ---------------- |
+| GET    | /api/projects     | Get all projects |
+| POST   | /api/projects     | Add new project  |
+| DELETE | /api/projects/:id | Delete project   |
+
+---
+
+## 🚀 Future Improvements
+
+* Authentication (JWT)
+* Project Image Upload
+* Edit/Update Projects
+* Deployment (AWS / Vercel)
+
+---
+
+## 👨‍💻 Author
+
+**Anjul Sati**
+
+* MERN & Java Full Stack Developer
+
+---
+
+## ⭐ Show Your Support
+
+Give a ⭐ if you like this project!

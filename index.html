@@ -4,7 +4,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anjul Sa<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anjul Sati | MERN & Java Full Stack Developer</title>
+    <meta name="description"
+        content="Portfolio of Anjul Sati, a MERN and Java Full Stack Developer specializing in scalable web applications, microservices, and modern UI development.">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="frontend/css/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar" role="navigation">
+        <div class="container nav-flex">
+            <a href="#home" class="logo">&lt;Anjul<span class="accent">/</span>&gt;</a>
+            <div class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </div>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact" class="btn-cta">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="badge-pill">🚀 MERN & Java Full Stack Developer</div>
+                    <h1>Engineering <span class="gradient-text">Scalable</span><br>MERN & Java Solutions.</h1>
+                    <p class="description">
+                        Hi, I'm <strong>Anjul Sati</strong>. A 2nd Year Computer Science student and
+                        Full Stack Developer specializing in the <strong>MERN Stack</strong> and
+                        <strong>Java Spring Boot</strong> Microservices.
+                    </p>
+                    <div class="hero-btns">
+                        <a href="#projects" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-secondary">Hire Me</a>
+                    </div>
+                </div>
+            </div>
+            <div class="glow-bg"></div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-heading">About <span class="accent">Me</span></h2>
+                <div class="bento-grid">
+
+                    <div class="bento-item bio-box hidden">
+                        <i class="fas fa-code icon-bg"></i>
+                        <h3>The Developer</h3>
+                        <p>
+                            I am pursuing my <strong>B.Tech in Computer Science</strong>.
+                            I build scalable full-stack applications using the
+                            <strong>MERN Stack</strong> and <strong>Java Spring Boot</strong>,
+                            focusing on clean architecture and secure APIs.
+                        </p>
+                    </div>
+
+                    <div class="bento-item skills-box hidden delay-1">
+                        <h3>Tech Stack</h3>
+                        <div class="tags">
+                            <span>MongoDB</span>
+                            <span>Express.js</span>
+                            <span>React.js</span>
+                            <span>Node.js</span>
+
+                            <span>Java 17</span>
+                            <span>Spring Boot</span>
+                            <span>Microservices</span>
+                            <span>Hibernate</span>
+
+                            <span>MySQL</span>
+                            <span>REST APIs</span>
+                            <span>JWT Auth</span>
+                            <span>Docker</span>
+                            <span>AWS</span>
+                            <span>Git & GitHub</span>
+                        </div>
+                    </div>
+
+                    <div class="bento-item edu-box hidden delay-2">
+                        <h3>Education</h3>
+                        <div class="edu-item">
+                            <strong>B.Tech Computer Science</strong>
+                            <span>2024 – 2028 (Present)</span>
+                        </div>
+                        <div class="edu-item" style="margin-top:10px;">
+                            <strong>Full Stack Development</strong>
+                            <span>MERN & Java</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="section">
+            <div class="container">
+                <h2 class="section-heading">My <span class="accent">Expertise</span></h2>
+                <div class="services-grid">
+
+                    <div class="service-card hidden">
+                        <i class="fas fa-server service-icon"></i>
+                        <h3>Backend Development</h3>
+                        <p>
+                            Building scalable backend systems using
+                            <strong>Node.js & Express</strong> and
+                            <strong>Java Spring Boot</strong>, with secure authentication and clean architecture.
+                        </p>
+                    </div>
+
+                    <div class="service-card hidden delay-1">
+                        <i class="fas fa-database service-icon"></i>
+                        <h3>Database Design</h3>
+                        <p>
+                            Designing efficient schemas using <strong>MongoDB</strong>,
+                            <strong>MySQL</strong>, and PostgreSQL with performance optimization.
+                        </p>
+                    </div>
+
+                    <div class="service-card hidden delay-2">
+                        <i class="fas fa-laptop-code service-icon"></i>
+                        <h3>Full Stack Web</h3>
+                        <p>
+                            Developing end-to-end applications using the <strong>MERN Stack</strong>
+                            and modern frontend architectures.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-heading">Featured <span class="accent">Projects</span></h2>
+
+                <div class="projects-grid" id="dynamic-projects">
+                    <p style="color: var(--text-muted);">Loading projects from database...</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="cta-banner hidden">
+                    <h2>Let’s build something <span class="gradient-text">great</span></h2>
+                    <p>Open to internships, freelance work, and collaborations.</p>
+
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=anjulsati147@gmail.com" target="_blank"
+                        class="btn btn-primary big-btn">
+                        <i class="fas fa-envelope"></i> Contact Me
+                    </a>
+
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2026 Anjul Sati · Built with <span class="accent">MERN</span> & Java ☕</p>
+    </footer>
+
+    <script src="frontend/js/script.js"></script>
+</body>
+
+</html>ti | MERN & Java Full Stack Developer</title>
     <meta name="description"
         content="Portfolio of Anjul Sati, a MERN and Java Full Stack Developer specializing in scalable web applications, microservices, and modern UI development.">
 

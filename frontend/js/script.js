@@ -177,4 +177,61 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Call the function to load projects
     fetchProjects();
+
+    /* =====================================================
+       CONTACT FORM SUBMISSION (Formspree Integration)
+    ====================================================== */
+    const contactForm = document.getElementById("contactForm");
+    if (contactForm) {
+        contactForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const formData = {
+                email: contactForm.querySelector('input[name="email"]').value,
+                message: contactForm.querySelector('textarea[name="message"]').value,
+            };
+
+            const submitBtn = document.getElementById("submitBtn");
+            const formMessage = document.getElementById("formMessage");
+            const originalBtnHTML = submitBtn.innerHTML;
+
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            formMessage.style.display = "none";
+
+            try {
+                const response = await fetch("https://formspree.io/f/mpqozkqj", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(formData),
+                });
+
+                if (response.ok) {
+                    // Success
+                    formMessage.className = "form-message success";
+                    formMessage.innerHTML = '<i class="fas fa-check-circle"></i> Message sent successfully! I\'ll get back to you soon.';
+                    formMessage.style.display = "block";
+                    contactForm.reset();
+
+                    // Clear message after 5 seconds
+                    setTimeout(() => {
+                        formMessage.style.display = "none";
+                    }, 5000);
+                } else {
+                    throw new Error("Form submission failed");
+                }
+            } catch (error) {
+                console.error("Form submission error:", error);
+                formMessage.className = "form-message error";
+                formMessage.innerHTML = '<i class="fas fa-exclamation-circle"></i> Something went wrong. Please try again.';
+                formMessage.style.display = "block";
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnHTML;
+            }
+        });
+    }
 });

@@ -163,6 +163,16 @@
             <div class="container">
                 <h2 class="section-heading">Featured <span class="accent">Projects</span></h2>
 
+                <div class="project-controls" style="margin-bottom: 1rem;">
+                    <label for="categoryPriority" style="color: var(--text-muted); font-size: 0.9rem;">Sort priority:</label>
+                    <select id="categoryPriority" style="margin-left: 0.5rem; padding: 0.5rem; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 4px;">
+                        <option value="Web,Mobile,Data,AI">Web > Mobile > Data > AI</option>
+                        <option value="AI,Data,Mobile,Web">AI > Data > Mobile > Web</option>
+                        <option value="Mobile,Web,AI,Data">Mobile > Web > AI > Data</option>
+                        <option value="Data,AI,Web,Mobile">Data > AI > Web > Mobile</option>
+                    </select>
+                </div>
+
                 <div class="projects-grid" id="dynamic-projects">
                     <p style="color: var(--text-muted);">Loading projects from database...</p>
                 </div>

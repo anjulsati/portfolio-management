@@ -128,6 +128,38 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", onScroll, { passive: true });
 
     /* =====================================================
+       QUEUE MANAGEMENT + ALGORITHM: PRIORITIZE PROJECTS BY CATEGORY
+       - design analysis: ensures highest-value categories render first
+       - algorithm: weighted sort with stable ordering
+    ====================================================== */
+    const prioritizeProjectsByCategory = (projects, categoryPriority = ["Web", "Mobile", "Data", "AI"]) => {
+        const weight = new Map(categoryPriority.map((cat, idx) => [cat.toLowerCase(), idx]));
+
+        return [...projects].sort((a, b) => {
+            const wa = weight.has(a.category.toLowerCase()) ? weight.get(a.category.toLowerCase()) : categoryPriority.length;
+            const wb = weight.has(b.category.toLowerCase()) ? weight.get(b.category.toLowerCase()) : categoryPriority.length;
+
+            if (wa !== wb) return wa - wb;
+            if (a.title !== b.title) return a.title.localeCompare(b.title);
+            return 0;
+        });
+    };
+
+    const getCategoryPriority = () => {
+        const select = document.getElementById("categoryPriority");
+        if (!select || !select.value) return ["Web", "Mobile", "Data", "AI"];
+        return select.value.split(",").map(item => item.trim()).filter(Boolean);
+    };
+
+    const setupCategoryPriorityListener = () => {
+        const select = document.getElementById("categoryPriority");
+        if (!select) return;
+        select.addEventListener("change", () => {
+            fetchProjects();
+        });
+    };
+
+    /* =====================================================
        FETCH DYNAMIC PROJECTS FROM CMS (UPDATED STYLE)
     ====================================================== */
     const fetchProjects = async () => {
@@ -145,7 +177,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            projects.forEach((proj, index) => {
+            // design analysis: pick a prioritized order for featured categories before rendering
+            const categoryPriority = getCategoryPriority();
+            const sortedProjects = prioritizeProjectsByCategory(projects, categoryPriority);
+
+            sortedProjects.forEach((proj, index) => {
                 // UPDATE: The tech stack items now have 'span' tags applied for pill boxes
                 const techSpans = proj.techStack.map(tech => `<span>${tech.trim()}</span>`).join('');
                 
@@ -175,7 +211,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // Call the function to load projects
+    // set up prioritization control listener and load projects
+    setupCategoryPriorityListener();
     fetchProjects();
 
     /* =====================================================

@@ -93,6 +93,20 @@ node server.js
 
 ---
 
+## 🧠 Design Analysis & Algorithm Implementation
+
+Implemented algorithmic design in frontend JavaScript for better UX and maintainability:
+
+* `frontend/js/admin.js`
+  - Added `sortProjectsByCategoryAndTitle()`
+  - Uses sorting algorithm (`O(n log n)`) to render project list in category/title order
+  - Design-analysis note: helps admin quickly find and manage projects by category and label
+
+* `frontend/js/script.js`
+  - Added `prioritizeProjectsByCategory()` and applied it in `fetchProjects()`
+  - Uses a weighted priority sort (custom comparator) for featured categories
+  - Design-analysis note: ensures important project types show first in portfolio view
+
 ## 🚀 Future Improvements
 
 * Authentication (JWT)

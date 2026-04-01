@@ -6,6 +6,20 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('addProjectForm').addEventListener('submit', handleAddProject);
 });
 
+
+/**
+ * Sort projects by category, then by title.
+ * Algorithm: O(n log n) sort (built-in Timsort in modern JS engines).
+ * Design analysis: stable and predictable order, easy to scan on admin page.
+ */
+const sortProjectsByCategoryAndTitle = projects => {
+    return [...projects].sort((a, b) => {
+        if (a.category < b.category) return -1;
+        if (a.category > b.category) return 1;
+        return a.title.localeCompare(b.title);
+    });
+};
+
 const fetchAdminProjects = async () => {
     const listContainer = document.getElementById('project-list');
     try {
@@ -14,7 +28,10 @@ const fetchAdminProjects = async () => {
         listContainer.innerHTML = ''; 
         if (projects.length === 0) { listContainer.innerHTML = '<p class="empty-state">No projects found. Add some!</p>'; return; }
         
-        projects.forEach(proj => {
+        // Algorithmic design: sort before rendering (design analysis for better UX and consistency)
+        const sortedProjects = sortProjectsByCategoryAndTitle(projects);
+
+        sortedProjects.forEach(proj => {
             listContainer.innerHTML += `
                 <div class="project-list-item">
                     <div>
